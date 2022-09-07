@@ -370,6 +370,16 @@ section .title::after {
     margin: 10px 0 7px 0;
 }
 
+.projects .pro-content .card a {
+    text-align: center;
+    color: crimson;
+}
+
+.projects .pro-content .card a:hover {
+    color: #fff;
+    margin-top: 100px;
+}
+
 
 /* skills section styling */
 
