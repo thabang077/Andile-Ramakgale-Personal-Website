@@ -15,6 +15,7 @@ $(document).ready(function() {
         }
     });
 
+   
     // slide-up script
     $('.scroll-up-btn').click(function() {
         $('html').animate({ scrollTop: 0 });
@@ -71,3 +72,25 @@ $(document).ready(function() {
         }
     });
 });
+function sendMail(){
+    var parms = {
+    name : document.getElementById("name").value,
+    email : document.getElementById("email").value,
+    subject : document.getElementById("subject").value,
+    message : document.getElementById("message").value,
+};
+    const ServiceID = "service_3nu9b1s";
+    const TemplateID = "template_lca9zyb";
+
+    emailjs
+   // emailjs.send("service_3nu9b1s","template_lca9zyb", parms).then(alert("Email sent")
+    .send(ServiceID, TemplateID, parms)
+    .then((res) => {
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("subject").value = "";
+        document.getElementById("message").value = "";
+        alert("Email sent");
+    })
+    .catch((err) => console.log(err));
+}
